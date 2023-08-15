@@ -2,30 +2,38 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
-import ProductList from './features/productList/ProductList';
+import ProductList from './features/productList/components/ProductList';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Cart from './features/cart/Cart';
-
+import CartPage from './pages/CartPage';
+import Checkout from './pages/Checkout';
+import ProductDetailPage from './pages/ProductDetailPage';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <Home />,
   },
   {
     path: "/login",
-    element: <LoginPage/>,
+    element: <LoginPage />,
   },
   {
     path: "/signup",
-    element: <SignupPage/>,
+    element: <SignupPage />,
   },
   {
-    // only for testing
     path: "/cart",
-    element: <Cart/>,
+    element: <CartPage />,
+  },
+  {
+    path: '/checkout',
+    element: <Checkout />,
+  },
+  {
+    path: '/product-detail',
+    element: <ProductDetailPage />,
   },
 ]);
 
@@ -33,7 +41,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className='App'>
-     <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </div>
   )
 }
